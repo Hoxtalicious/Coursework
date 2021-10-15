@@ -1,0 +1,33 @@
+dist:     trusty  
+sudo:     required  
+
+language: cpp     
+
+os:
+    - linux
+
+compiler:
+    - clang
+
+
+matrix:
+    exclude:
+        - os:       osx
+          compiler: gcc
+
+        - os:  osx
+          env: TARGET_CPU=x86 BUILD_CONFIGURATION=Debug
+
+        - os:  osx
+          env: TARGET_CPU=x86 BUILD_CONFIGURATION=Release
+
+
+script:
+    - mkdir build
+    - cd build
+    - cmake .. -DCMAKE_BUILD_TYPE=$BUILD_CONFIGURATION -DTARGET_CPU=$TARGET_CPU
+    - cmake --build .
+
+
+    on:
+        tags:     true
