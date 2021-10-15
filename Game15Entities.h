@@ -11,16 +11,6 @@ typedef struct Game15Field
     int cells[FIELD_WIDTH][FIELD_HEIGHT];
 } Game15Field;
 
-/*
- * enum:  Game15Direction
- * --------------------
- * Êîíñòàíòû íàïðàâëåíèÿ
- *
- *  UP: ââåðõ
- *  DOWN: âíèç
- *  LEFT: âëåâî
- *  RIGHT: âïðàâî
- */
 typedef enum Game15Direction
 {
     UP, DOWN, LEFT, RIGHT
