@@ -8,9 +8,6 @@ extern "C"
 
 namespace
 {
-    /*
-        Проверяет замену двух переменных
-    */
     TEST(SwapTest, CheckValues)
     {
         int a = 5;
@@ -24,10 +21,7 @@ namespace
         EXPECT_EQ(expectedA, a);
         EXPECT_EQ(expectedB, b);
     }
-
-    /*
-        Проверяет перемешивание игрового поля
-    */
+    
     TEST(ShuffleFieldTest, CheckShuffiling)
     {
         Game15Field field;
@@ -57,9 +51,6 @@ namespace
         EXPECT_EQ(true, isShuffeled);
     }
 
-    /*
-        Проверяет создание перемешеного поля с уникальными клетками
-    */
     TEST(CreateFieldTest, CheckIfFieldCreatingSuccessufully)
     {
         Game15Field field = create_field();
@@ -89,9 +80,7 @@ namespace
         EXPECT_EQ(true, passed);
     }
 
-    /*
-        Проверяет шаги (UP/DOWN/LEFT/RIGHT). Два варианта: доступный и нет
-    */
+
     TEST(MoveTest, MoveUpAccepted)
     {
         int init[4][4] = {
@@ -436,9 +425,7 @@ namespace
         EXPECT_EQ(true, isPassed);
     }
 
-    /*
-        Проверяет функцию окончания игры. Два варианта: доступный и нет
-    */
+
     TEST(EndTest, EndAccepted)
     {
         int init[4][4] = {
